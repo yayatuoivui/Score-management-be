@@ -12,7 +12,7 @@ class userController {
             const user = await userServices.create(userData);
 
             return res.status(200).json({
-                message: "User created successfully",
+                message: "User created successfully ok",
                 code: "200",
                 data: user
             });
