@@ -3,9 +3,10 @@
 const classServices = require('../services/class.services');
 
 class classController {
-
+    // Create a new user
     static create_class = async (req, res) => {
         try {
+            console.log("Incoming request:", req.body);
             const classData = req.body;
             const class_ = await classServices.create(classData);
             return res.status(200).json({

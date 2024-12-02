@@ -3,6 +3,7 @@ const db = require('../models');
 const { v4: uuidv4 } = require('uuid');
 
 class userServices {
+    // Create a new user
     static create = async ({role, fullname, email, password}) => {
         const user_id = uuidv4();
         try {

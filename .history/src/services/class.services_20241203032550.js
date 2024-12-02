@@ -3,6 +3,7 @@ const db = require('../models');
 const { v4: uuidv4 } = require('uuid');
 
 class classServices {
+
     static create = async ({name}) => {
         const class_id = uuidv4();
         try {
