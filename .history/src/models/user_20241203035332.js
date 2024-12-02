@@ -33,16 +33,17 @@ module.exports = (sequelize) => {
       allowNull: false,
       unique: true,
     },
-    ID_number: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
     },
-    date_of_birth: {
-      type: DataTypes.DATE,
+    email: {
+      type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
-    department: {
+    email: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,

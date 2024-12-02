@@ -42,7 +42,7 @@ module.exports = (sequelize) => {
       type: DataTypes.DATE,
       allowNull: false,
     },
-    department: {
+    : {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
