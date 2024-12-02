@@ -20,10 +20,6 @@ module.exports = (sequelize) => {
       primaryKey: true,
       allowNull: false,
     },
-    role: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     fullname: {
       type: DataTypes.STRING,
       allowNull: false,

@@ -6,8 +6,8 @@ class userController {
     // Create a new user
     static create_user = async (req, res) => {
         try {
-            console.log("Incoming request:", req.body);
             const userData = req.body;
+            console.log("Incoming request:", req.body);
             const user = await userServices.create(userData);
             return res.status(200).json({
                 message: "User created successfully ok",

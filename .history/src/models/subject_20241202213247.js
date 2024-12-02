@@ -2,21 +2,20 @@
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-  class Class extends Model {
+  class Subject extends Model {
     static associate(models){
-      Class.hasMany(models.SubjectClass, {
-        foreignKey: 'class_id'
+      Subject.hasMany(models.Score, {
       });
 
-      Class.hasMany(models.UserClass, {
-        foreignKey: 'class_id'
+      Subject.hasMany(models.SubjectClass, {
+        foreignKey: 'subject_id'
       });
 
     }
   }
 
-  Class.init({
-    class_id: {
+  Subject.init({
+    subject_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
@@ -27,10 +26,10 @@ module.exports = (sequelize) => {
     },
   }, {
     sequelize,
-    modelName: 'Class',
-    tableName: 'Class',
+    modelName: 'Subject',
+    tableName: 'Subjects',
     timestamps: false,
   });
 
-  return Class;
+  return Subject;
 };

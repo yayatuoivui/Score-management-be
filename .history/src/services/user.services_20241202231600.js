@@ -4,12 +4,12 @@ const db = require('../models');
 
 class userServices {
     // Create a new user
-    static create = async ({user_id, role, fullname, email, password}) => {
+    static create = async ({role, name, email, password}) => {
+        console.log(role, name, email, password);
         try {
             const user = await db.User.create({
-                user_id: user_id,
                 role: role,
-                fullname: fullname,
+                name: name,
                 email: email,
                 password: password
             });

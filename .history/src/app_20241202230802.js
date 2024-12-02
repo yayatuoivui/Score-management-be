@@ -14,10 +14,6 @@ const bodyParser = require('body-parser');
 const web_api = require('./routes/web/index');
 
 const app = express();
-app.use(express.json());
-
-// Middleware for parsing URL-encoded request bodies
-app.use(express.urlencoded({ extended: true }));
 
 
 // init mysql db
