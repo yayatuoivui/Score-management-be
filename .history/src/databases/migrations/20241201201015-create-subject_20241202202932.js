@@ -3,11 +3,11 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('class', {
-      class_id: {
+    await queryInterface.createTable('subject', {
+      subject_id: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.UUID
+        type: Sequelize.INTEGER
       },
       name:{
           allowNull: false,
@@ -17,5 +17,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
+
   }
 };

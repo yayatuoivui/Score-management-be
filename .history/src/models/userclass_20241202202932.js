@@ -16,12 +16,12 @@ module.exports = (sequelize) => {
 
   UserClass.init({
     user_id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
     },
     class_id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   }, {

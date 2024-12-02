@@ -7,7 +7,7 @@ module.exports = {
       class_id: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.UUID
+        type: Sequelize.INTEGER
       },
       name:{
           allowNull: false,
