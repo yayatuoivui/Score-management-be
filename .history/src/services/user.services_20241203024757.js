@@ -1,13 +1,15 @@
+
 'use strict';
 const db = require('../models');
 const { v4: uuidv4 } = require('uuid');
 
 class userServices {
+    // Create a new user
     static create = async ({role, fullname, email, password}) => {
         const user_id = uuidv4();
         try {
             const user = await db.User.create({
-                user_id: user_id,
+                user_id: uuidv4(),
                 role: role,
                 fullname: fullname,
                 email: email,

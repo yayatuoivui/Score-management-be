@@ -1,10 +1,12 @@
+
 'use strict';
 const db = require('../models');
-const { v4: uuidv4 } = require('uuid');
+import { v4 as uuidv4 } from 'uuid';
+uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
 
 class userServices {
-    static create = async ({role, fullname, email, password}) => {
-        const user_id = uuidv4();
+    // Create a new user
+    static create = async ({user_id, role, fullname, email, password}) => {
         try {
             const user = await db.User.create({
                 user_id: user_id,
