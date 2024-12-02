@@ -1,35 +1,38 @@
-'use strict';
-const { Model, DataTypes } = require('sequelize');
+"use strict";
+const { Model, DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
-  class UserClass extends Model {
-    static associate(models){
-        UserClass.belongsTo(models.User, {
-        foreignKey: 'user_id'
+  class UserClasses extends Model {
+    static associate(models) {
+      UserClasses.belongsTo(models.Users, {
+        foreignKey: "user_id",
       });
 
-        UserClass.belongsTo(models.Class, {
-        foreignKey: 'class_id'
+      UserClasses.belongsTo(models.Classes, {
+        foreignKey: "class_id",
       });
     }
   }
 
-  UserClass.init({
-    user_id: {
-      type: DataTypes.UUID,
-      primaryKey: true,
-      allowNull: false,
+  UserClasses.init(
+    {
+      user_id: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
+      },
+      class_id: {
+        type: DataTypes.UUID,
+        allowNull: false,
+      },
     },
-    class_id: {
-      type: DataTypes.UUID,
-      allowNull: false,
-    },
-  }, {
-    sequelize,
-    modelName: 'UserClass',
-    tableName: 'UserClass',
-    timestamps: false,
-  });
+    {
+      sequelize,
+      modelName: "UserClasses",
+      tableName: "UserClasses",
+      timestamps: false,
+    }
+  );
 
-  return UserClass;
+  return UserClasses;
 };
