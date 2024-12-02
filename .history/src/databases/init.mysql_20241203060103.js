@@ -18,10 +18,10 @@ const initialize = async () => {
 initialize()
 .then(() => {
     // After initializing, set up Sequelize
-    const sequelize = new Sequelize(database, username, password, {
-      host: host,
+    const sequelize = new Sequelize('score', 'dat', '123456789', {
+      host: 'score.c14os4422pzu.us-east-1.rds.amazonaws.com',
       dialect: dialect,
-      port: port,
+      port: 3306,
     });
 
     return sequelize.authenticate()

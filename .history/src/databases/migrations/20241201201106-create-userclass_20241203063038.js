@@ -3,12 +3,12 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('SubjectClasses', {
-      subject_id: {
+    await queryInterface.createTable('Userclasses', {
+      user_id: {
         type: Sequelize.UUID,
         references: {
-          model: "Subjects",
-          key: "subject_id",
+          model: "Users",
+          key: "user_id",
         },
       },
       class_id: {
@@ -18,11 +18,10 @@ module.exports = {
           key: "class_id",
         },
       }
-    })
-    
+    });
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('SubjectClasses');
+    await queryInterface.dropTable('Userclasses');
   }
 };

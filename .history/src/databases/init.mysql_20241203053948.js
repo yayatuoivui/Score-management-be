@@ -5,10 +5,10 @@ const {development : {host, username, password, database, port, dialect}} = requ
 const initialize = async () => {
     // Create database if it doesn't exist
     const connection = await mysql.createConnection({
-      host: host,
-      user: username,
-      password: password,
-      port: port,
+      host: 'score.c14os4422pzu.us-east-1.rds.amazonaws.com',
+      user: 'dat',
+      password: '123456789',
+      port: 3306,
     });
     await connection.query(`CREATE DATABASE IF NOT EXISTS \`${database}\`;`);
     await connection.end();

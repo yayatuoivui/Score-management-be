@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('SubjectClasses', {
+    await queryInterface.createTable('Subjectclasses', {
       subject_id: {
         type: Sequelize.UUID,
         references: {
@@ -23,6 +23,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('SubjectClasses');
+    await queryInterface.dropTable('Subjectclasses');
   }
 };

@@ -3,18 +3,18 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('SubjectClasses', {
+    await queryInterface.createTable('Subjectclasses', {
       subject_id: {
         type: Sequelize.UUID,
         references: {
-          model: "Subjects",
+          model: "subject",
           key: "subject_id",
         },
       },
       class_id: {
         type: Sequelize.UUID,
         references: {
-          model: "Classes",
+          model: "class",
           key: "class_id",
         },
       }
@@ -23,6 +23,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('SubjectClasses');
+    await queryInterface.dropTable('Subjectclasses');
   }
 };

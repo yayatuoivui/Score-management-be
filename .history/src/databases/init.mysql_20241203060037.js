@@ -18,7 +18,7 @@ const initialize = async () => {
 initialize()
 .then(() => {
     // After initializing, set up Sequelize
-    const sequelize = new Sequelize(database, username, password, {
+    const sequelize = new Sequelize('score', username, password, {
       host: host,
       dialect: dialect,
       port: port,
