@@ -21,7 +21,7 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     role: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING,  // Ensure this field exists
       allowNull: false,
     },
     fullname: {

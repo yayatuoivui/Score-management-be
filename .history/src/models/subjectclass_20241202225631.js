@@ -2,35 +2,34 @@
 const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
-  class Class extends Model {
+  class SubjectClass extends Model {
     static associate(models){
-      Class.hasMany(models.SubjectClass, {
-        foreignKey: 'class_id'
+      SubjectClass.belongsTo(models.Subject, {
+        foreignKey: 'subject_id'
       });
 
-      Class.hasMany(models.UserClass, {
+      SubjectClass.belongsTo(models.Class, {
         foreignKey: 'class_id'
       });
-
     }
   }
 
-  Class.init({
-    class_id: {
+  SubjectClass.init({
+    subject_id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       allowNull: false,
     },
-    name: {
-      type: DataTypes.STRING,
+    class_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   }, {
     sequelize,
-    modelName: 'Class',
-    tableName: 'Class',
+    modelName: 'SubjectsClass',
+    tableName: 'SubjectsClass',
     timestamps: false,
   });
 
-  return Class;
+  return SubjectClass;
 };
