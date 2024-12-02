@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   class SubjectClass extends Model {
     static associate(models) {
       SubjectClass.belongsTo(models.Subject, {
-        foreignKey: 'subject_id'
+        foreignKey: 'user_id'
       });
 
       SubjectClass.belongsTo(models.Class, {
@@ -15,20 +15,16 @@ module.exports = (sequelize, DataTypes) => {
   }
   
   SubjectClass.init({
-    subject_id: {
-      type: DataTypes.UUID,
+    // Define your columns here, for example:
+    id: {
+      type: DataTypes.INTEGER,
       primaryKey: true,
-      allowNull: false,
+      autoIncrement: true
     },
-    class_id: {
-      type: DataTypes.UUID,
-      allowNull: false,
-    },
+    // Add other fields as needed
   }, {
     sequelize,
     modelName: 'SubjectClass',
-    tableName: 'SubjectClass',
-    timestamps: false,
   });
   
   return SubjectClass;

@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
   class Class extends Model {
-    static associate(models) {
+    static associate(models){
       if (models.SubjectClass && models.UserClass) {
         Class.hasMany(models.SubjectClass, {
           foreignKey: 'class_id'
@@ -11,11 +11,6 @@ module.exports = (sequelize) => {
 
         Class.hasMany(models.UserClass, {
           foreignKey: 'class_id'
-        });
-      } else {
-        console.error('Missing required models:', {
-          hasSubjectClass: !!models.SubjectClass,
-          hasUserClass: !!models.UserClass
         });
       }
     }

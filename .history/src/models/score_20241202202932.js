@@ -16,11 +16,11 @@ module.exports = (sequelize) => {
 
   Score.init({
     user_id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     subject_id: {
-      type: DataTypes.UUID,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     process: {

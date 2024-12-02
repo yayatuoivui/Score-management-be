@@ -24,11 +24,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.UUID,
       allowNull: false,
     },
+      primaryKey: true,
+      autoIncrement: true
+    },
+    // Add other fields as needed
   }, {
     sequelize,
     modelName: 'SubjectClass',
-    tableName: 'SubjectClass',
-    timestamps: false,
   });
   
   return SubjectClass;
