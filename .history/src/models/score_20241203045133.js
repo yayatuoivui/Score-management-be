@@ -9,8 +9,7 @@ module.exports = (sequelize) => {
       });
 
       Score.belongsTo(models.Subject, {
-        foreignKey: 'subject_id',
-        as: 'subject'
+        foreignKey: 'subject_id'
       });
     }
   }
@@ -39,8 +38,7 @@ module.exports = (sequelize) => {
       type: DataTypes.DATE,
       allowNull: false,
     },
-  },   {
-    sequelize,
+  },  {
     timestamps: false,
     freezeTableName: true,
     tableName: 'score',

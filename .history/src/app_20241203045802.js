@@ -22,10 +22,10 @@ const { sequelize } = require('./databases/init.mysql');
 
 // Configure CORS
 const corsOptions = {
-  origin: 'http://localhost:5173', 
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
-  allowedHeaders: ['Content-Type', 'Authorization'], 
-  credentials: true, 
+  origin: '', // Allow all origins. Replace '*' with specific origin(s) as needed.
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  credentials: true, // Include credentials if needed
 };
 
 app.use(cors(corsOptions)); // Enable CORS with the defined options

@@ -3,7 +3,6 @@ const express = require('express');
 const userRouter = require('./users');
 const classRouter = require('./class');
 const subjectRouter = require('./subject');
-const scoreRouter = require('./score');
 const web_api = express();
 
 web_api.use('/users', userRouter);

@@ -9,8 +9,7 @@ module.exports = (sequelize) => {
       });
 
       Score.belongsTo(models.Subject, {
-        foreignKey: 'subject_id',
-        as: 'subject'
+        foreignKey: 'subject_id'
       });
     }
   }
