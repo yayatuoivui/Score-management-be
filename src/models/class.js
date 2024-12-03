@@ -1,42 +1,45 @@
-'use strict';
-const { Model, DataTypes } = require('sequelize');
+"use strict";
+const { Model, DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
-  class Class extends Model {
+  class Classes extends Model {
     static associate(models) {
-      if (models.SubjectClass && models.UserClass) {
-        Class.hasMany(models.SubjectClass, {
-          foreignKey: 'class_id'
+      if (models.SubjectClasses && models.UserClasses) {
+        Classes.hasMany(models.SubjectClasses, {
+          foreignKey: "class_id",
         });
 
-        Class.hasMany(models.UserClass, {
-          foreignKey: 'class_id'
+        Classes.hasMany(models.UserClasses, {
+          foreignKey: "class_id",
         });
       } else {
-        console.error('Missing required models:', {
-          hasSubjectClass: !!models.SubjectClass,
-          hasUserClass: !!models.UserClass
+        console.error("Missing required models:", {
+          hasSubjectClass: !!models.SubjectClasses,
+          hasUserClass: !!models.UserClasses,
         });
       }
     }
   }
 
-  Class.init({
-    class_id: {
-      type: DataTypes.UUID,
-      primaryKey: true,
-      allowNull: false,
+  Classes.init(
+    {
+      class_id: {
+        type: DataTypes.UUID,
+        primaryKey: true,
+        allowNull: false,
+      },
+      name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-  }, {
-    sequelize,
-    modelName: 'Class',
-    tableName: 'Class',
-    timestamps: false,
-  });
+    {
+      sequelize,
+      modelName: "Classes",
+      tableName: "Classes",
+      timestamps: false,
+    }
+  );
 
-  return Class;
+  return Classes;
 };
